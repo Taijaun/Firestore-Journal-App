@@ -11,7 +11,7 @@ class ViewController: UIViewController {
 
     
     @IBOutlet weak var tableView: UITableView!
-    
+    private var notesModel = NotesModel()
     private var notes = [Note]()
     
     
@@ -19,8 +19,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        // Set delegate and datasource for the table
         tableView.delegate = self
         tableView.dataSource = self
+        
+        // Set delf as the delegate for the ntoes model
+        notesModel.delegate = self
+        
+        // Retrieve all notes
+        notesModel.getNotes()
     }
     
     
@@ -39,12 +46,28 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NoteCell", for: indexPath)
         
         // TODO: Customise cell
+        let titleLabel = cell.viewWithTag(1) as? UILabel
+        titleLabel?.text = notes[indexPath.row].title
+        
+        let bodyLabel = cell.viewWithTag(2) as? UILabel
+        bodyLabel?.text = notes[indexPath.row].body
         
         return cell
         
     }
     
+}
+
+extension ViewController: NotesModelProtocol {
     
+    func noteRetrieved(notes: [Note]) {
+        
+        // Set notes property and refresh the table view
+        self.notes = notes
+        
+        tableView.reloadData()
+    }
     
+
     
 }
