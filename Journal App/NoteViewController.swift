@@ -9,21 +9,34 @@ import UIKit
 
 class NoteViewController: UIViewController {
 
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var bodyTextView: UITextView!
+    
+    var note: Note?
+    var notesModel: NotesModel?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if note != nil {
+            
+            titleTextField.text = note?.title
+            bodyTextView.text = note?.body
+            
+        }
 
-        // Do any additional setup after loading the view.
+        
+    }
+
+    
+    @IBAction func deleteTapped(_ sender: Any) {
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func saveTapped(_ sender: Any) {
     }
-    */
+    
+    
 
 }
