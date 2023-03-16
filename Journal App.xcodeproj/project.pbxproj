@@ -16,6 +16,8 @@
 		DC86111A29C2F52B0030442E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC86111829C2F52B0030442E /* LaunchScreen.storyboard */; };
 		DC86112229C2F5E30030442E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC86112129C2F5E30030442E /* GoogleService-Info.plist */; };
 		DC86112429C2FA850030442E /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC86112329C2FA850030442E /* Note.swift */; };
+		DC86112629C2FC3B0030442E /* NotesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC86112529C2FC3B0030442E /* NotesModel.swift */; };
+		DC86112829C2FC960030442E /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC86112729C2FC960030442E /* NoteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		DC86111B29C2F52B0030442E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC86112129C2F5E30030442E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DC86112329C2FA850030442E /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		DC86112529C2FC3B0030442E /* NotesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesModel.swift; sourceTree = "<group>"; };
+		DC86112729C2FC960030442E /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +91,9 @@
 				DC86110D29C2F52B0030442E /* AppDelegate.swift */,
 				DC86110F29C2F52B0030442E /* SceneDelegate.swift */,
 				DC86111129C2F52B0030442E /* ViewController.swift */,
+				DC86112729C2FC960030442E /* NoteViewController.swift */,
 				DC86112329C2FA850030442E /* Note.swift */,
+				DC86112529C2FC3B0030442E /* NotesModel.swift */,
 				DC86111329C2F52B0030442E /* Main.storyboard */,
 				DC86111629C2F52B0030442E /* Assets.xcassets */,
 				DC86111829C2F52B0030442E /* LaunchScreen.storyboard */,
@@ -217,6 +223,8 @@
 				DC86110E29C2F52B0030442E /* AppDelegate.swift in Sources */,
 				DC86111029C2F52B0030442E /* SceneDelegate.swift in Sources */,
 				DC86112429C2FA850030442E /* Note.swift in Sources */,
+				DC86112829C2FC960030442E /* NoteViewController.swift in Sources */,
+				DC86112629C2FC3B0030442E /* NotesModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
