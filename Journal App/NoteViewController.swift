@@ -31,10 +31,33 @@ class NoteViewController: UIViewController {
 
     
     @IBAction func deleteTapped(_ sender: Any) {
+        
+        if self.note != nil {
+            notesModel?.deleteNote(self.note!)
+        }
+        
     }
     
     
     @IBAction func saveTapped(_ sender: Any) {
+        
+        if self.note == nil {
+            // This is a brand new note
+            
+            // Create the note
+            let n = Note(docId: UUID().uuidString, title: titleTextField.text ?? "", body: bodyTextView.text ?? "", isStarred: false, createdAt: Date(), lastUpdatedAt: Date())
+            
+            self.note = n
+        } else {
+            // This is an update to the existing note
+            self.note?.title = titleTextField.text ?? ""
+            self.note?.body = bodyTextView.text ?? ""
+            self.note?.lastUpdatedAt = Date()
+        }
+        
+        // Send it to the notes model
+        self.notesModel?.saveNote(self.note!)
+        
     }
     
     

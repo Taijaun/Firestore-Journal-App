@@ -58,4 +58,33 @@ class NotesModel {
         
     }
     
+    func deleteNote(_ n: Note) {
+        
+        let db = Firestore.firestore()
+        
+        db.collection("notes").document(n.docId).delete()
+        
+    }
+    
+    func saveNote(_ n:Note) {
+        
+        let db = Firestore.firestore()
+        
+        db.collection("notes").document(n.docId).setData(noteToDict(n))
+    }
+    
+    func noteToDict(_ n: Note) -> [String:Any] {
+        
+        var dict = [String:Any]()
+        
+        dict["docID"] = n.docId
+        dict["title"] = n.title
+        dict["body"] = n.body
+        dict["createdAt"] = n.createdAt
+        dict["lastUpdatedAt"] = n.lastUpdatedAt
+        dict["isStarred"] = n.isStarred
+        
+        return dict
+    }
+    
 }
