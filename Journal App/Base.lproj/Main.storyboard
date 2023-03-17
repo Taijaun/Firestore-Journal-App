@@ -69,8 +69,20 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fgw-Mh-CD3" secondAttribute="bottom" id="uTh-jE-IxZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="oAs-Nz-f8L"/>
+                    <navigationItem key="navigationItem" id="oAs-Nz-f8L">
+                        <barButtonItem key="leftBarButtonItem" image="star" catalog="system" id="I0c-Lw-enJ" userLabel="Star Filter Button">
+                            <connections>
+                                <action selector="starFilterTapped:" destination="BYZ-38-t0r" id="Rhp-h2-CNU"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="uiC-fr-3HP">
+                            <connections>
+                                <segue destination="zBT-97-UyM" kind="presentation" id="zcu-4M-W65"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="starButton" destination="I0c-Lw-enJ" id="jJ3-fS-1K6"/>
                         <outlet property="tableView" destination="fgw-Mh-CD3" id="q4g-FH-49o"/>
                     </connections>
                 </viewController>
@@ -109,7 +121,7 @@
                                         <rect key="frame" x="0.0" y="643" width="353" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JH9-tk-OVZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="94.666666666666671" height="40"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Delete"/>
                                                 <connections>
@@ -117,7 +129,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXs-hJ-fiU">
-                                                <rect key="frame" x="186.66666666666663" y="0.0" width="166.33333333333337" height="40"/>
+                                                <rect key="frame" x="114.66666666666664" y="0.0" width="166.33333333333337" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="HOc-Fp-Ckh"/>
@@ -127,6 +139,14 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="Save"/>
                                                 <connections>
                                                     <action selector="saveTapped:" destination="zBT-97-UyM" eventType="touchUpInside" id="lej-c7-3Md"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O2O-t6-TX7" userLabel="Star">
+                                                <rect key="frame" x="301" y="0.0" width="52" height="40"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                                                <connections>
+                                                    <action selector="starTapped:" destination="zBT-97-UyM" eventType="touchUpInside" id="dFV-ur-3ki"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -145,6 +165,7 @@
                     </view>
                     <connections>
                         <outlet property="bodyTextView" destination="wxZ-M3-Gnf" id="zeZ-p1-Pbc"/>
+                        <outlet property="starButton" destination="O2O-t6-TX7" id="Cjw-9M-fVx"/>
                         <outlet property="titleTextField" destination="ET2-VA-7hf" id="h9p-lg-l7H"/>
                     </connections>
                 </viewController>
@@ -171,7 +192,12 @@
             <point key="canvasLocation" x="75.572519083969468" y="-27.464788732394368"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="zcu-4M-W65"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
